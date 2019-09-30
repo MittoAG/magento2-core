@@ -1,5 +1,5 @@
 {
-    "name": "mitto/magento2-core",
+    "name": "mitto-ag/magento2-core",
     "description": "Mitto core module for Magento 2",
     "require": {
         "magento/framework": "100.*|101.*|102.*"
