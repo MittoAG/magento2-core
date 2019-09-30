@@ -1,0 +1,35 @@
+<?php
+
+/** @var Button $block */
+
+use Mitto\Core\Block\Adminhtml\System\Config\Button; ?>
+<div class="actions">
+    <button onclick="testSMS(); return false;"
+            class="action"
+            type="button"
+            id="<?= $block->escapeHtmlAttr($block->getHtmlId()) ?>">
+        <span><?= $block->escapeHtml($block->getButtonLabel()) ?></span>
+    </button>
+</div>
+<script>
+    require(['jquery', 'Magento_Ui/js/modal/alert'], function ($, alert) {
+        window.testSMS = function () {
+            $.ajax({
+                url: '<?php echo $block->getButtonUrl(); ?>',
+                type: 'POST',
+                dataType: 'json',
+                context: this,
+                showLoader: true,
+                data: {
+                    to: $('#mitto_core_api_test_sms_to').val(),
+                },
+                success: function (response) {
+                    alert({title: response.responseText})
+                },
+                error: function (response) {
+                    alert({title: response.responseJSON.error})
+                }
+            })
+        }
+    });
+</script>

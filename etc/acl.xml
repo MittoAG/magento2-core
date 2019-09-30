@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Mitto_Core::config_api" title="API config"/>
+                <resource id="Mitto_Core::log" title="Mitto Log"/>
+                <resource id="Mitto_Core::templates" title="Mitto Templates"/>
+            </resource>
+        </resources>
+    </acl>
+</config>
