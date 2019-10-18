@@ -10,7 +10,7 @@
 commands:
 
 ```
-$ composer require mitto-ag/magento2-core
+$ composer require mitto/magento2-core
 $ php bin/magento setup:upgrade
 $ php bin/magento setup:di:compile
 $ php bin/magento setup:static-content:deploy
